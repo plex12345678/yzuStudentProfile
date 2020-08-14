@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <title>找找我的直屬</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        html,
+        body {
+            background-color: #fff;
+            color: #636b6f;
+            font-family: 'Nunito', sans-serif;
+            font-weight: 200;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .full-height {
+            height: 80vh;
+        }
+
+        .flex-center {
+            align-items: center;
+            display: flex;
+            justify-content: center;
+        }
+
+        .position-ref {
+            position: relative;
+        }
+
+        .top-right {
+            position: absolute;
+            right: 10px;
+            top: 18px;
+        }
+
+        .content {
+            text-align: center;
+        }
+
+        .title {
+            font-size: 84px;
+        }
+
+        .links>a {
+            color: #636b6f;
+            padding: 0 25px;
+            font-size: 13px;
+            font-weight: 600;
+            letter-spacing: .1rem;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        .m-b-md {
+            margin-bottom: 30px;
+        }
+    </style>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+</head>
+
+<body>
+
+    <div class="flex-center position-ref full-height">
+        <div class="content">
+            <div class="title m-b-md">
+                我的直屬在哪兒
+            </div>
+            <div class="form-group">
+                <input id="sid" type="number" min="1000000" max="9999999" class="form-control"
+                    style="text-align: center;" placeholder="想找的學號 ex: 1063317" />
+            </div>
+            <div class="form-group">
+                <a href="#" class="btn btn-primary" id="link" style="display: none">按我</a>
+            </div>
+        </div>
+    </div>
+
+    <p id="about" style="position: absolute; right: 2em; bottom: 0.5em">Yen-Cheng, Zhang &lt;<a
+            href="mailto:tyzescgm@gmail.com?subject=YzuMySenior">tyzescgm@gmail.com</a>&gt;</p>
+
+    <script>
+        const urlPrefix="https://portalx.yzu.edu.tw/PortalSocialVB/FMain/PostWall.aspx?Menu=User&UserAccount=";window.onload=(()=>{let t=String.fromCharCode(0),e=new Array("Y","Z"),r=new Date,n=String(r.getDate()).padStart(2,"0"),l=String(r.getMonth()+1).padStart(2,"0"),o=r.getFullYear(),a=e.concat(Array(o,l,n).join("/").split(""));a.push("s");let i=document.querySelector("#sid"),s=document.querySelector("#link");i.addEventListener("input",()=>{if(i.value>=1e6&&i.value<=2e6){let e=a.concat(i.value.toString().split(""));e.push("");let r=urlPrefix+encodeURIComponent(btoa(e.join(t)));s.innerText="按我",s.setAttribute("href",r),s.setAttribute("style","")}else s.innerText="",s.setAttribute("href",""),s.setAttribute("style","display:none")})});
+        // const urlPrefix = "https://portalx.yzu.edu.tw/PortalSocialVB/FMain/PostWall.aspx?Menu=User&UserAccount=";
+
+        // window.onload = () => {
+        //     let delim = String.fromCharCode(0);
+        //     let prefix = new Array('Y', 'Z')
+        //     let today = new Date();
+        //     let day = String(today.getDate()).padStart(2, '0');
+        //     let month = String(today.getMonth() + 1).padStart(2, '0');
+        //     let year = today.getFullYear();
+        //     let payload = prefix.concat(Array(year, month, day).join('/').split(''));
+        //     payload.push('s');
+        //     let sid = document.querySelector('#sid');
+        //     let link = document.querySelector("#link");
+        //     let genToken = () => {
+        //         if (sid.value >= 1000000 && sid.value <= 2000000) {
+        //             let meow = payload.concat(sid.value.toString().split(''));
+        //             meow.push('');
+        //             let url = urlPrefix + encodeURIComponent(btoa(meow.join(delim)));
+        //             link.innerText = "按我";
+        //             link.setAttribute("href", url);
+        //             link.setAttribute("style", "");
+        //         } else {
+        //             link.innerText = "";
+        //             link.setAttribute("href", "");
+        //             link.setAttribute("style", "display:none");
+        //         }
+        //     }
+        //     sid.addEventListener('input', genToken);
+        // }
+    </script>
+</body>
+
+</html>
