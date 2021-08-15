@@ -1,7 +1,7 @@
 YZU Student Profile
 ===
 
-**Confirmed Endpoint has deprecated by YZU**
+**Endpoint comfirmed deprecated by YZU**
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
