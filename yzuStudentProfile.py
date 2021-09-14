@@ -12,7 +12,7 @@ def gen_token(uid):
     time = datetime.date.today()
     tmp = str(time.year) + '/' + str(time.month).rjust(2, '0') +'/' + str(time.day).rjust(2, '0')
     payload += list(tmp) + list('s' + str(uid))
-    return 'https://portalx.yzu.edu.tw/PortalSocialVB/FMain/PostWall.aspx?Menu=User&UserAccount=' + base64.b64encode(('\x00'.join(payload) + '\x00').encode()).decode()
+    return 'https://portalx.yzu.edu.tw/PortalSocialVB/FMain/PostWall.aspx?Menu=User&s1103140=' + base64.b64encode(('\x00'.join(payload) + '\x00').encode()).decode()
 
 def dec_token(token):
     import base64
